@@ -11,21 +11,27 @@ class User extends Model {
    }
 }
 
-// User
+// User - init method to initialize all of the model's data and configuration
 User.init(
    {
+      // define an id column
       id: {
          type: DataTypes.INTEGER,
          allowNull: false,
          primaryKey: true,
          autoIncrement: true,
       },
+
+      // define a user column
       username: {
          type: DataTypes.STRING,
          allowNull: false,
       },
+
+      // define a password column
       password: {
          type: DataTypes.STRING,
+         // this is the equivalent of SQL's `NOT NULL` option
          allowNull: false,
          validate: {
             len: [4],
@@ -35,7 +41,7 @@ User.init(
    // hooks
    {
       hooks: {
-         // set up beforeCreate lifecycle
+         // set up beforeCreate lifecycle - use async/await syntax
          async beforeCreate(newUserData) {
             newUserData.password = await bcrypt.hash(newUserData.password, 10);
             return newUserData;
@@ -49,6 +55,8 @@ User.init(
             return updatedUserData;
          },
       },
+
+      // pass in our imported sequelize connection (the direct connection to our database)
       sequelize,
       timestamps: false,
       freezeTableName: true,

@@ -1,9 +1,14 @@
 const User = require("./User");
 const Post = require("./Post");
 const Comment = require("./Comment");
-// define each of the relationships
+// create associations
 
-// Post belongs to user
+// create association
+User.hasMany(Post, {
+   foreignKey: "user_id",
+});
+
+// reverse association by adding :
 Post.belongsTo(User, {
    foreignKey: "userId",
    onDelete: "CASCADE",
@@ -15,6 +20,7 @@ Comment.belongsTo(User, {
    onDelete: "CASCADE",
 });
 
+// creating one to many relationship between these Comment and Post so we can perform aggregated SQL functions between Models
 // Post has many Comments
 Post.hasMany(Comment, {
    foreignKey: "postId",
