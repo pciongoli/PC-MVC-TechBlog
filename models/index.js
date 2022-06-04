@@ -11,12 +11,14 @@ User.hasMany(Post, {
 // reverse association by adding :
 Post.belongsTo(User, {
    foreignKey: "userId",
+   // when we delete a User we also delete the associated Post(s)
    onDelete: "CASCADE",
 });
 
 // Comment belongs to user
 Comment.belongsTo(User, {
    foreignKey: "userId",
+   // When we delete a User we also delete the associated Comment(s)
    onDelete: "CASCADE",
 });
 
@@ -24,6 +26,7 @@ Comment.belongsTo(User, {
 // Post has many Comments
 Post.hasMany(Comment, {
    foreignKey: "postId",
+   // When we delete a Post we also delete the associated Comments
    onDelete: "CASCADE",
 });
 

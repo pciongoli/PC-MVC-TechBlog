@@ -1,17 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// get all users
-router.get("/", (req, res) => {
-   User.findAll({
-      attributes: { exclude: ["password"] },
-   })
-      .then((dbUserData) => res.json(dbUserData))
-      .catch((err) => {
-         console.log(err);
-         res.status(500).json(err);
-      });
-});
+// user-routes
 
 // create a new user
 router.post("/", (req, res) => {
@@ -19,6 +9,8 @@ router.post("/", (req, res) => {
       username: req.body.username,
       password: req.body.password,
    })
+
+      // set up sessions w/'loggedIn' variable true
       .then((dbUserData) => {
          req.session.save(() => {
             req.session.userId = dbUserData.id;
@@ -55,6 +47,7 @@ router.post("/login", (req, res) => {
          return;
       }
 
+      // set up session variable 'loggedIn' once user has successfully logged in
       req.session.save(() => {
          req.session.userId = dbUserData.id;
          req.session.username = dbUserData.username;
@@ -67,9 +60,10 @@ router.post("/login", (req, res) => {
 
 // post to logout
 router.post("/logout", (req, res) => {
+   // if logout destroy the session (logout)
    if (req.session.loggedIn) {
       req.session.destroy(() => {
-         res.status(204).json({ message: "You are now logged out!" }).end();
+         res.status(200).json({ message: "You are now logged out!" }).end();
       });
    } else {
       res.status(400).end();
@@ -85,7 +79,7 @@ router.delete("/user/:id", (req, res) => {
    })
       .then((dbUserData) => {
          if (!dbUserData) {
-            res.status(404).json({ message: "Please enter a valid user Id!" });
+            res.status(400).json({ message: "Please enter a valid user Id!" });
             return;
          }
          res.json(dbUserData);

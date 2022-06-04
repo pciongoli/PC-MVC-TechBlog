@@ -4,6 +4,7 @@ const withAuth = require("../../utils/auth");
 
 // create a comment = only allow user to do this after logging in
 router.post("/", withAuth, (req, res) => {
+   // send
    Comment.create({ ...req.body, userId: req.session.userId })
       .then((newComment) => {
          res.json(newComment);

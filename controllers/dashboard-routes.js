@@ -17,7 +17,7 @@ router.get("/", withAuth, (req, res) => {
          // serialize the data before passing it to the template
          const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-         // Send 'loggedIn' session variable to 'homepage' template
+         // Send 'loggedIn' session variable to 'all-posts' template
          res.render("all-posts", {
             layout: "dashboard",
             posts,

@@ -28,7 +28,7 @@ router.put("/:id", withAuth, (req, res) => {
          if (affectedRows > 0) {
             res.status(200).end();
          } else {
-            res.status(404).end();
+            res.status(400).end();
          }
       })
       .catch((err) => {
@@ -47,7 +47,7 @@ router.delete("/:id", withAuth, (req, res) => {
          if (affectedRows > 0) {
             res.status(200).end();
          } else {
-            res.status(404).end();
+            res.status(400).end();
          }
       })
       .catch((err) => {
