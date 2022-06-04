@@ -1,7 +1,10 @@
 const router = require("express").Router();
+
+// require Post from models
 const { Post, Comment, User } = require("../../models/");
 const withAuth = require("../../utils/auth");
 
+// create a post = only allow feature once user has logged in (withAuth)
 router.post("/", withAuth, (req, res) => {
    const body = req.body;
    console.log(req.session.userId);
@@ -14,6 +17,7 @@ router.post("/", withAuth, (req, res) => {
       });
 });
 
+// update a post if logged in
 router.put("/:id", withAuth, (req, res) => {
    Post.update(req.body, {
       where: {
@@ -32,6 +36,7 @@ router.put("/:id", withAuth, (req, res) => {
       });
 });
 
+// delete a post if logged in
 router.delete("/:id", withAuth, (req, res) => {
    Post.destroy({
       where: {
@@ -50,4 +55,5 @@ router.delete("/:id", withAuth, (req, res) => {
       });
 });
 
+// export Router object
 module.exports = router;
