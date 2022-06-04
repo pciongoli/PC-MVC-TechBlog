@@ -1,0 +1,38 @@
+<html lang="en">
+
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tech About It</title>
+      <link rel="stylesheet" href="/css/style.css" />
+   </head>
+
+   {{! main body off app }}
+   <body class="">
+
+      {{! create nav bar }}
+      <nav class="">
+         <ul>
+            <li class=""><a href="/">Home</a></li>
+            <li class=""><a href="/dashboard">Dash</a></li>
+            <li class=""><a href="/login">Login</a></li>
+            <li class=""><a href="#" id="logout-link">Logout</a></li>
+         </ul>
+      </nav>
+
+      {{! create visual header }}
+      <header class="">
+         <h1 class=""><a href="/">Tech About It</a></h1>
+      </header>
+
+      <main class="">
+         {{{body}}}
+      </main>
+
+      <footer class="">
+         &copy; Get in tech with us!
+      </footer>
+   </body>
+
+</html>
+<script src="/js/logout.js"></script>
