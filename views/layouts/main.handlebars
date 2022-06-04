@@ -22,23 +22,23 @@
          <ul>
             <div class="container-fluid">
                {{#if loggedIn}}
-
                   <li class="nav-item"><a
                         class="nav-link"
-                        href="/login"
-                     >Login</a></li>
+                        href="#"
+                        id="logout-link"
+                     >Logout</a></li>
                {{else}}
                   <li class="nav-item"><a
                         class="nav-link"
                         href="/dashboard"
                      >MyDash</a></li>
 
-                  <li class="nav-item"><a
-                        class="nav-link"
-                        href="#"
-                        id="logout-link"
-                     >Logout</a></li>
                {{/if}}
+               <li class="nav-item"><a
+                     class="nav-link"
+                     href="/login"
+                  >Login</a></li>
+
             </div>
          </ul>
       </nav>
