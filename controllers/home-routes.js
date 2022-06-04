@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
       .then((dbPostData) => {
          const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-         res.render("posts", { posts });
+         res.render("all-posts", { posts });
       })
       .catch((err) => {
          res.status(500).json(err);

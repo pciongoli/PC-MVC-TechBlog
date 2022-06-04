@@ -18,7 +18,7 @@ router.get("/", withAuth, (req, res) => {
          const posts = dbPostData.map((post) => post.get({ plain: true }));
 
          // Send 'loggedIn' session variable to 'posts' template
-         res.render("posts", {
+         res.render("all-posts-main", {
             layout: "dashboard",
             posts,
          });
@@ -29,7 +29,7 @@ router.get("/", withAuth, (req, res) => {
       });
 });
 
-router.get("/posts", withAuth, (req, res) => {
+router.get("/post", withAuth, (req, res) => {
    res.render("new-post", {
       layout: "dashboard",
    });

@@ -23,24 +23,22 @@
             <div class="container-fluid">
                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 
-               {{#if loggedIn}}
-                  <li class="nav-item"><a
-                        class="nav-link"
-                        href="/dashboard"
-                     >MyDash</a></li>
-                  <li class="nav-item"><a
-                        class="nav-link"
-                        href="#"
-                        id="logout-link"
-                     >Logout</a></li>
+               <li class="nav-item"><a
+                     class="nav-link"
+                     href="/dashboard"
+                  >MyDash</a></li>
 
-               {{else}}
-                  <li class="nav-item"><a
-                        class="nav-link"
-                        href="/login"
-                     >Login</a></li>
+               <li class="nav-item"><a
+                     class="nav-link"
+                     href="/login"
+                  >Login</a></li>
 
-               {{/if}}
+               <li class="nav-item"><a
+                     class="nav-link"
+                     href="#"
+                     id="logout-link"
+                  >Logout</a></li>
+
             </div>
          </ul>
       </nav>
@@ -58,6 +56,5 @@
          &copy; Get in tech with us!
       </footer>
    </body>
-
+   <script src="/js/logout.js"></script>
 </html>
-<script src="/js/logout.js"></script>
