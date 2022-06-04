@@ -18,12 +18,28 @@
    <body class="">
 
       {{! create nav bar }}
-      <nav class="">
+      <nav class="navbar">
          <ul>
-            <li class=""><a href="/">Home</a></li>
-            <li class=""><a href="/dashboard">Dash</a></li>
-            <li class=""><a href="/login">Login</a></li>
-            <li class=""><a href="#" id="logout-link">Logout</a></li>
+            <div class="container-fluid">
+               {{#if loggedIn}}
+
+                  <li class="nav-item"><a
+                        class="nav-link"
+                        href="/login"
+                     >Login</a></li>
+               {{else}}
+                  <li class="nav-item"><a
+                        class="nav-link"
+                        href="/dashboard"
+                     >MyDash</a></li>
+
+                  <li class="nav-item"><a
+                        class="nav-link"
+                        href="#"
+                        id="logout-link"
+                     >Logout</a></li>
+               {{/if}}
+            </div>
          </ul>
       </nav>
 
