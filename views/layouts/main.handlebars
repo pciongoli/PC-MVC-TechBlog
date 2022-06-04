@@ -21,24 +21,26 @@
       <nav class="navbar">
          <ul>
             <div class="container-fluid">
+               <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+
                {{#if loggedIn}}
+                  <li class="nav-item"><a
+                        class="nav-link"
+                        href="/dashboard"
+                     >MyDash</a></li>
                   <li class="nav-item"><a
                         class="nav-link"
                         href="#"
                         id="logout-link"
                      >Logout</a></li>
+
                {{else}}
                   <li class="nav-item"><a
                         class="nav-link"
-                        href="/dashboard"
-                     >MyDash</a></li>
+                        href="/login"
+                     >Login</a></li>
 
                {{/if}}
-               <li class="nav-item"><a
-                     class="nav-link"
-                     href="/login"
-                  >Login</a></li>
-
             </div>
          </ul>
       </nav>
