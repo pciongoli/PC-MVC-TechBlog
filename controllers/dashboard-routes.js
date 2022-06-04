@@ -1,6 +1,6 @@
 const router = require("express").Router();
 // require Post from models
-const { Post } = require("../models/");
+const { Post } = require("../models");
 const withAuth = require("../utils/auth");
 
 // define each dashboard-route
@@ -29,7 +29,7 @@ router.get("/", withAuth, (req, res) => {
       });
 });
 
-router.get("/new", withAuth, (req, res) => {
+router.get("/posts", withAuth, (req, res) => {
    res.render("new-post", {
       layout: "dashboard",
    });
