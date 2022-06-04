@@ -17,8 +17,8 @@ router.get("/", withAuth, (req, res) => {
          // serialize the data before passing it to the template
          const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-         // Send 'loggedIn' session variable to 'all-posts' template
-         res.render("all-posts", {
+         // Send 'loggedIn' session variable to 'posts' template
+         res.render("posts", {
             layout: "dashboard",
             posts,
          });
@@ -43,7 +43,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
          if (dbPostData) {
             const post = dbPostData.get({ plain: true });
 
-            res.render("edit-post", {
+            res.render("edit-posts", {
                layout: "dashboard",
                post,
             });

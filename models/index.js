@@ -3,22 +3,17 @@ const Post = require("./Post");
 const Comment = require("./Comment");
 // create associations
 
-// create association
-User.hasMany(Post, {
-   foreignKey: "user_id",
-});
-
-// reverse association by adding :
+// reverse association by adding
 Post.belongsTo(User, {
    foreignKey: "userId",
-   // when we delete a User we also delete the associated Post(s)
+   // when we delete a user we also delete the associated posts
    onDelete: "CASCADE",
 });
 
 // Comment belongs to user
 Comment.belongsTo(User, {
    foreignKey: "userId",
-   // When we delete a User we also delete the associated Comment(s)
+   // when we delete a user we also delete the associated comments
    onDelete: "CASCADE",
 });
 
@@ -26,7 +21,7 @@ Comment.belongsTo(User, {
 // Post has many Comments
 Post.hasMany(Comment, {
    foreignKey: "postId",
-   // When we delete a Post we also delete the associated Comments
+   // when we delete a Post we also delete the associate
    onDelete: "CASCADE",
 });
 
