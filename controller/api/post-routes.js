@@ -1,7 +1,6 @@
 const router = require("express").Router();
-
 // require Post from models
-const { Post, Comment, User } = require("../../models/");
+const { Post } = require("../../models/");
 const withAuth = require("../../utils/auth");
 
 // create a post = only allow feature once user has logged in (withAuth)
