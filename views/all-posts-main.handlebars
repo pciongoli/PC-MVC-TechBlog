@@ -1,11 +1,16 @@
 <div class="posts list-group">
    {{#each posts}}
-      <a
-         class="list-item flex-row justify-space-between"
-         href="/dashboard/edit/{{id}}"
-      >
-         <span>{{title}}</span>
-         <span>{{format_date createdAt}}</span>
-      </a>
+      <div class="card">
+         <div class="card-body flex-row justify-space-between">
+
+            <a
+               class="list-item flex-row justify-space-between"
+               href="/dashboard/edit/{{id}}"
+            >
+               <span>{{title}}</span>
+               <span>{{format_date createdAt}}</span>
+            </a>
+         </div>
+      </div>
    {{/each}}
 </div>

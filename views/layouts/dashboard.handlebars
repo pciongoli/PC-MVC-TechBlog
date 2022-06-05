@@ -10,11 +10,15 @@
          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
          crossorigin="anonymous"
       />
-      <title>Tech About It</title>
+      <title>Tech About It 🖥</title>
       <link rel="stylesheet" href="/css/style.css" />
    </head>
 
-   <body class="">
+   <body class="flex">
+      <header class="hero">
+         <h1 class=""><a href="/dashboard">My Dash</a></h1>
+      </header>
+
       <nav class="navbar">
          <ul>
             <div class="container-fluid">
@@ -32,16 +36,21 @@
             </div>
          </ul>
       </nav>
-      <header class="hero">
-         <h1 class=""><a href="/dashboard">My Dash</a></h1>
-      </header>
 
       <main class="">
          {{{body}}}
       </main>
+      <br /><br />
+      <footer class="footer container">
 
-      <footer class="footer">
-         <a href="/dashboard/post">😛 New Post</a>
+         <div class="row">
+
+            <div class="col align-self-start">
+               <a href="/dashboard/post"> New Post</a>
+            </div>
+
+         </div>
+
       </footer>
    </body>
 

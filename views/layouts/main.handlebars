@@ -10,12 +10,17 @@
          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
          crossorigin="anonymous"
       />
-      <title>Tech About It</title>
+      <title>Tech About It 🖥</title>
       <link rel="stylesheet" href="/css/style.css" />
    </head>
 
    {{! main body off app }}
-   <body class="">
+   <body class="flex">
+
+      {{! create visual header }}
+      <header class="header">
+         <h1 class="h1"><a href="/">Tech About It</a></h1>
+      </header>
 
       {{! create nav bar }}
       <nav class="navbar">
@@ -38,15 +43,9 @@
                      href="#"
                      id="logout-link"
                   >Logout</a></li>
-
             </div>
          </ul>
       </nav>
-
-      {{! create visual header }}
-      <header class="">
-         <h1 class=""><a href="/">Tech About It</a></h1>
-      </header>
 
       <main class="">
          {{{body}}}
