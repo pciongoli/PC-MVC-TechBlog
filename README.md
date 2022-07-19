@@ -1,4 +1,4 @@
-# 14 Model View Controller (MVC): Tech Blog
+Model View Controller (MVC): PC MVC Tech Blog
 
 ## Link to Deployed Project
 * https://github.com/pciongoli/PC-MVC-TechBlog
