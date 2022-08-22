@@ -16,26 +16,23 @@
 
    <body class="flex">
       <header class="hero">
-         <h1 class=""><a href="/dashboard">My Dash</a></h1>
+         <h1 class="flex-row"><a href="/dashboard">My Dash</a></h1>
       </header>
 
-      <nav class="navbar">
-         <ul>
-            <div class="container-fluid">
-               <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-               <li class="nav-item"><a
-                     class="nav-link"
-                     href="/dashboard"
-                  >MyDash</a></li>
+      <ul class="nav justify-content-center">
 
-               <li class="nav-item"><a
-                     class="nav-link"
-                     href="#"
-                     id="logout-link"
-                  >Logout</a></li>
-            </div>
-         </ul>
-      </nav>
+         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+         <li class="nav-item"><a
+               class="nav-link"
+               href="/dashboard"
+            >MyDash</a></li>
+
+         <li class="nav-item"><a
+               class="nav-link"
+               href="#"
+               id="logout-link"
+            >Logout</a></li>
+      </ul>
 
       <main class="">
          {{{body}}}

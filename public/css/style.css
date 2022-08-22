@@ -1,0 +1,37 @@
+:root {
+   --primary: #1c69c6;
+   --secondary: #6ad05a;
+   --tertiary: hsl(173, 52%, 90%);
+   --dark: #151615;
+}
+
+html,
+body {
+   min-height: 100%;
+}
+
+body {
+   margin: 5px;
+   padding: 5px;
+   background-color: var(--tertiary);
+   color: var(--secondary);
+   font-family: "Patrick hand";
+}
+
+.card-text {
+   margin: 25px;
+}
+
+.card {
+   margin-top: 25px;
+   min-width: 100%;
+}
+
+.card-title {
+   text-decoration: none;
+}
+
+.nav-item {
+   display: flex;
+   flex-direction: row;
+}
