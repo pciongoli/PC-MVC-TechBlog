@@ -28,6 +28,9 @@
       "mysql2": "^2.3.3",
       "sequelize": "^6.17.0"
    },
+   "engines": {
+      "node": "16.x"
+   },
    "devDependencies": {
       "jest": "^27.5.1"
    }
